@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="=UTF-8">
+        <title>VERIFIED</title>
+        <link rel="stylesheet" href="Home_Page.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script type="text/javascript" src="jas/jquery-3.6.0.min.js"></script>
+        <link rel="icon" href="http://127.0.0.1:3000/c:/xampp/htdocs/Simple Login Page/ALL/Images/Icon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <section class="top-container">
+            <img src="./Images/Icon.jpg" alt="Profile Photo" class="top-profile-photo">
+        </section>
+        <section class="content">
+            <script type="text/javascript">
+                function voting(){
+                    datavote= "id="+2;
+                    $.ajax({
+                            url: "votingpoll.php",
+                            type: "GET",
+                            data: "datavote",
+                            contentType : false,
+                            cache : false,
+                            processData:false,
+                            crossDomain: true,
+
+                            beforeSend:function(data){
+                                $('.articles').html('<div class="moodloader"><img src="image/mood.gif"><img src="image/loader.gif" class="loading"></div>')
+                            },
+
+                            success:function(para2){
+                                $('.vote').html(para2);
+                            },
+
+                            error:function(data){
+                                alert('Failed to process');
+                            }
+                        });
+};
+          setTimeout(voting, 1);      
+            </script>
+            <div class="vote">
+                
+            </div>
+            <div class="line"></div>
+            <div class="articles">
+                <script type="text/javascript">
+                    function farm(){
+                        dataa= "id="+2;
+                        $.ajax({
+								url: "article.php",
+								type: "GET",
+								data: "dataa",
+								contentType : false,
+								cache : false,
+								processData:false,
+								crossDomain: true,
+
+								beforeSend:function(data){
+									$('.articles').html('<div class="moodloader"><img src="image/mood.gif"><img src="image/loader.gif" class="loading"></div>')
+								},
+
+								success:function(para2){
+									$('.articles').html(para2);
+								},
+
+								error:function(data){
+									alert('Failed to process');
+								}
+							});
+	};
+              setTimeout(farm, 10);      
+                </script>
+            </div>
+        </section>
+        <section class="menu-bar">
+            <script type="text/javascript">
+            function menu(){
+                datamenu= "id="+3;
+                $.ajax({
+                        url: "menubar.php",
+                        type: "GET",
+                        data: "datamenu",
+                        contentType : false,
+                        cache : false,
+                        processData:false,
+                        crossDomain: true,
+
+                        beforeSend:function(data){
+                            //$('.articles').html('<div class="moodloader"><img src="image/mood.gif"><img src="image/loader.gif" class="loading"></div>')
+                        },
+
+                        success:function(para2){
+                            $('.menu-bar').html(para2);
+                        },
+
+                        error:function(data){
+                            alert('Failed to process');
+                        }
+                    });
+};
+      setTimeout(menu, 1);      
+        </script>
+            
+        </section>
+    </body>
+</html>
